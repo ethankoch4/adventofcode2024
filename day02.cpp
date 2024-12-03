@@ -7,10 +7,11 @@
 #include <cmath>
 
 /**
- * Get the sum of the absolute differences between two columns of numbers.
+ * Get the similarity score
  * 
  */
 int main() {
+    // load into two vectors
     std::vector<int> col1;
     std::vector<int> col2;
 
@@ -21,25 +22,21 @@ int main() {
         int a, b;
         if (!(iss >> a >> b)) {
             std::cerr << "Error parsing line: " << line << std::endl;
-            continue;
+            continue; // Skip lines that cannot be parsed
         }
         col1.push_back(a);
         col2.push_back(b);
     }
     inputFile.close();
 
-    // sort each vector
-    std::sort(col1.begin(), col1.end());
-    std::sort(col2.begin(), col2.end());
-
-    // loop through the vectors and sum absolute differences
-    int sum = 0;
+    int similarity_score = 0;
     for (int i = 0; i <= col1.size(); i++) {
-        sum += std::abs(col1[i] - col2[i]);
+        int curr_val1 = col1[i];
+        int num_appearances_in_col2 = std::count(col2.begin(), col2.end(), curr_val1);
+        similarity_score += (curr_val1 * num_appearances_in_col2);
     }
 
-    // print the sum of the differences
-    std::cout << sum << std::endl;
+    std::cout << similarity_score << std::endl;
     std::cout.flush();
     return 0;
 }
