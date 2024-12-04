@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <cmath>
 
-std::vector<std::string> split(std::string string, const std::string& delim) {
+auto split(std::string string, const std::string& delim) -> std::vector<std::string> {
     std::vector<std::string> split_string;
     int pos = 0;
     std::string token;
@@ -22,7 +22,7 @@ std::vector<std::string> split(std::string string, const std::string& delim) {
 /**
  * Get two substrings with numbers that are split by a comma and end with closed parentheses
  */
-std::vector<std::string> find_two_numbers(std::string string) {
+auto find_two_numbers(std::string string) -> std::vector<std::string> {
     std::vector<std::string> nums;
     std::string num1 = "";
     std::string num2 = "";
@@ -54,7 +54,7 @@ std::vector<std::string> find_two_numbers(std::string string) {
     return nums;
 }
 
-int find_number(const std::string& string) {
+auto find_number(const std::string& string) -> int {
     std::string num = "";
     for (char i : string) {
         if (isdigit(i)) {
@@ -68,7 +68,7 @@ int find_number(const std::string& string) {
  * Get all the correctly formatted 'mul(num1,num2)' instructions
  * 
  */
-int main() {
+auto main() -> int {
     std::vector<int> col1;
     std::vector<int> col2;
 

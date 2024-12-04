@@ -10,7 +10,7 @@
  * Get the sum of the absolute differences between two columns of numbers.
  * 
  */
-int main() {
+auto main() -> int {
     std::vector<int> col1;
     std::vector<int> col2;
 

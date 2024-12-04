@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.16)
 project(adventofcode2024 LANGUAGES CXX)
 
@@ -11,3 +10,6 @@ find_program(CLANG_TIDY_EXE NAMES clang-tidy)
 if(CLANG_TIDY_EXE)
     set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
 endif()
+
+# Add the -Wc++11-extensions flag
+add_compile_options(-Wc++11-extensions)

@@ -10,7 +10,7 @@
  * Get the similarity score
  * 
  */
-int main() {
+auto main() -> int {
     // load into two vectors
     std::vector<int> col1;
     std::vector<int> col2;
