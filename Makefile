@@ -4,7 +4,7 @@ all: run clean
 
 lint:
 	@command -v clang-tidy >/dev/null 2>&1
-	@clang-tidy day01.cpp day02.cpp -- -I. >/dev/null 2>&1
+	@clang-tidy day*.cpp -- -I. >/dev/null 2>&1
 
 build: lint
 	@mkdir -p build
@@ -16,6 +16,8 @@ run: build
 	@g++ -x c++ day01.cpp -o /tmp/solve >/dev/null 2>&1 && /tmp/solve && rm /tmp/solve
 	@echo "DAY 2 SOLUTION:"
 	@g++ -x c++ day02.cpp -o /tmp/solve >/dev/null 2>&1 && /tmp/solve && rm /tmp/solve
+	@echo "DAY 3 SOLUTION:"
+	@g++ -x c++ day03.cpp -o /tmp/solve >/dev/null 2>&1 && /tmp/solve && rm /tmp/solve
 	
 clean:
 	@rm -rf build

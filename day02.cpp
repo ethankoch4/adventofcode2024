@@ -15,15 +15,12 @@ int main() {
     std::vector<int> col1;
     std::vector<int> col2;
 
-    std::ifstream inputFile("data/input.txt");
+    std::ifstream inputFile("data/day01_input.txt");
     std::string line;
     while (std::getline(inputFile, line)) {
         std::istringstream iss(line);
         int a, b;
-        if (!(iss >> a >> b)) {
-            std::cerr << "Error parsing line: " << line << std::endl;
-            continue; // Skip lines that cannot be parsed
-        }
+        iss >> a >> b;
         col1.push_back(a);
         col2.push_back(b);
     }
@@ -36,7 +33,7 @@ int main() {
         similarity_score += (curr_val1 * num_appearances_in_col2);
     }
 
-    std::cout << similarity_score << std::endl;
+    std::cout << similarity_score << '\n';
     std::cout.flush();
     return 0;
 }
