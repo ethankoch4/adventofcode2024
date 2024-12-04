@@ -4,7 +4,7 @@ all: run clean
 
 lint:
 	@command -v clang-tidy >/dev/null 2>&1
-	@clang-tidy day*.cpp -- -I. >/dev/null 2>&1
+	@clang-tidy -checks='-*,modernize-*' -fix *.cpp >/dev/null 2>&1
 
 build: lint
 	@mkdir -p ./build

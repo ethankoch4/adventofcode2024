@@ -7,6 +7,7 @@
 
 
 auto main() -> int {
+    // PART 1
     // load in day04_input.txt lines into a vector of char vectors
     std::vector<std::vector<char>> lines;
     std::ifstream inputFile("data/day04_input.txt");
@@ -113,5 +114,39 @@ auto main() -> int {
         }
     }
     std::cout << num_xmas_found << '\n';
+
+
+    // PART 2
+    // Looking for MAS, MAS in shape of an X
+    // use A as anchor because it's in the middle of the two X's
+    int total_num_Xmases = 0;
+    for (int i = 1; i < lines.size() - 1; i++) {
+        auto line = lines[i];
+        for (int j = 1; j < line.size() - 1; j++) {
+            auto ch = line[j];
+            if (ch == 'A') {
+                // check for two M's and two S's in an X shape
+                // the M's and S's must be diagonal from each other
+                auto upper_left = lines[i - 1][j - 1];
+                auto upper_right = lines[i - 1][j + 1];
+                auto lower_left = lines[i + 1][j - 1];
+                auto lower_right = lines[i + 1][j + 1];
+                
+                if (upper_left == 'M' && upper_right == 'M' && lower_right == 'S' && lower_left == 'S') {
+                    total_num_Xmases++;
+                }
+                else if (upper_left == 'S' && upper_right == 'S' && lower_right == 'M' && lower_left == 'M') {
+                    total_num_Xmases++;
+                }
+                else if (upper_left == 'M' && upper_right == 'S' && lower_right == 'S' && lower_left == 'M') {
+                    total_num_Xmases++;
+                }
+                else if (upper_left == 'S' && upper_right == 'M' && lower_right == 'M' && lower_left == 'S') {
+                    total_num_Xmases++;
+                }
+            }
+        }
+    }
+    std::cout << total_num_Xmases << '\n';
     return 0;
 }
