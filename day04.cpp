@@ -10,7 +10,7 @@ auto main() -> int {
     // PART 1
     // load in day04_input.txt lines into a vector of char vectors
     std::vector<std::vector<char>> lines;
-    std::ifstream inputFile("data/day04_input.txt");
+    std::ifstream inputFile("data/day04.txt");
     std::string line;
     while (std::getline(inputFile, line)) {
         std::vector<char> line_chars;

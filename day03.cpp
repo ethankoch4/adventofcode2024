@@ -72,7 +72,7 @@ auto main() -> int {
     std::vector<int> col1;
     std::vector<int> col2;
 
-    std::ifstream inputFile("data/day03_input.txt");
+    std::ifstream inputFile("data/day03.txt");
     // join lines with space
     std::string line = "";
     std::string curr_line;

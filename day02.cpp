@@ -15,7 +15,7 @@ auto main() -> int {
     std::vector<int> col1;
     std::vector<int> col2;
 
-    std::ifstream inputFile("data/day01_input.txt");
+    std::ifstream inputFile("data/day01.txt");
     std::string line;
     while (std::getline(inputFile, line)) {
         std::istringstream iss(line);
