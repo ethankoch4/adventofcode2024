@@ -22,6 +22,8 @@ run: build
 	@g++ -x c++ -Wc++11-extensions -std=c++17 day04.cpp -o ./tmp/solve >/dev/null 2>&1 && ./tmp/solve && rm ./tmp/solve
 	@echo "DAY 5 SOLUTION:"
 	@g++ -x c++ -Wc++11-extensions -std=c++17 day05.cpp -o ./tmp/solve >/dev/null 2>&1 && ./tmp/solve && rm ./tmp/solve
+	@echo "DAY 6 SOLUTION:"
+	@g++ -x c++ -Wc++11-extensions -std=c++17 day06.cpp -o ./tmp/solve >/dev/null 2>&1 && ./tmp/solve && rm ./tmp/solve
 
 clean:
 	@rm -rf ./build ./tmp
